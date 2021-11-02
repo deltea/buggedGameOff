@@ -1,9 +1,10 @@
-# Bugged!: Game Off 2021
+# :spider: Bugged!: Game Off 2021
+
+**Live Demo:** [https://thcheetah777.github.io/buggedGameOff/](thcheetah777.github.io/buggedGameOff/)
 
 ## Description
 
-#### **____**
-
+#### **A small game I made for [Game Off 2021](https://itch.io/jam/game-off-2021).** A spy is trying to infiltrate the enemy's headquarters. The spy gathers crucial information by listening devices. The enemy is getting ***BUGGED!***
 
 ## Getting Started
 
@@ -39,6 +40,7 @@ After you activate the server, got to [localhost:8000](http://localhost:8000/) t
 
 ## Preview
 
+No preview right now, sorry :disappointed:
 
 ## Contribution
 
@@ -46,9 +48,13 @@ Read [CONTRIBUTING.md](https://github.com/thcheetah777/buggedGameOff/blob/master
 
 ## Version History
 
+None right now, but there will be soon!
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/thcheetah777/buggedGameOff/blob/master/LICENSE.md) file for full details
 
 ## Acknowledgments
+
+* Inspiration: One definition of BUG, "a concealed listening device"
+* Graphics: My mom
