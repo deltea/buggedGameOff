@@ -1,6 +1,6 @@
 # :spider: Bugged!: Game Off 2021
 
-**Live Demo:** [https://thcheetah777.github.io/buggedGameOff/](thcheetah777.github.io/buggedGameOff/)
+**Live Demo:** [thcheetah777.github.io/buggedGameOff/](https://thcheetah777.github.io/buggedGameOff/)
 
 ## Description
 
