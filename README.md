@@ -4,7 +4,7 @@
 
 ## Description
 
-#### **A small game I made for [Game Off 2021](https://itch.io/jam/game-off-2021).** A spy is trying to infiltrate the enemy's headquarters. The spy gathers crucial information by listening devices. The enemy is getting ***BUGGED!***
+**A small game I made for [Game Off 2021](https://itch.io/jam/game-off-2021).** A spy is trying to infiltrate the enemy's headquarters. The spy gathers crucial information by listening devices. The enemy is getting ***BUGGED!***
 
 ## Getting Started
 
