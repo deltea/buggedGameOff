@@ -56,5 +56,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 
 ## Acknowledgments
 
-* Inspiration: One definition of BUG, "a concealed listening device"
-* Graphics: My mom
+* **Inspiration**: One definition of BUG, "a concealed listening device"
+* **Graphics**: Me on [pixilart.com](https://www.pixilart.com/)
