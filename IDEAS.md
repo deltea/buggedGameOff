@@ -15,3 +15,7 @@
 ![background](https://www.spriteland.com/sprites/downloads/night-background_PNG.png)
 
 ## Sounds
+
+https://user-images.githubusercontent.com/67921602/140584573-d149ac23-4c7c-4221-8afb-0f8c0f439585.mp4
+
+https://user-images.githubusercontent.com/67921602/140586205-27d93da0-fd2a-4dc7-ad7c-a2c3ac53c4cd.mp4
