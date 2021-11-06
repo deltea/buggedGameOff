@@ -19,7 +19,7 @@ const config = {
 	height: 643,
 
   // Color of sky
-  backgroundColor: 0x000,
+  backgroundColor: 0xffffff,
 
   // Physics
   physics: {
@@ -40,11 +40,11 @@ const config = {
   },
 
   // Scenes
-  // scene: {
-  //   preload,
-  //   create,
-  //   update
-  // }
+  scene: {
+    preload,
+    create,
+    update
+  }
 };
 
 // Phaser game
