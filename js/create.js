@@ -1,5 +1,5 @@
 // Create animations, sprites, and colliders
 function create() {
   // Create player sprite
-  this.physics.add.sprite(500, 0, "spy0");
+  game.spy = this.physics.add.sprite(500, 0, "spy0");
 }
