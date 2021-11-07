@@ -11,9 +11,7 @@ function update() {
 
     // Flip image
     game.spy.flipX = false;
-
-    // Dir var
-    game.spy.dir = "R";
+    game.spy.setOffset(25, 20);
 
     // Left
   } else if (game.cursors.left.isDown) {
@@ -25,9 +23,7 @@ function update() {
 
     // Flip image
     game.spy.flipX = true;
-
-    // Dir var
-    game.spy.dir = "L";
+    game.spy.setOffset(22, 20);
 
     // None
   } else {

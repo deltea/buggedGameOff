@@ -4,7 +4,7 @@ function create() {
   game.cursors = this.input.keyboard.createCursorKeys();
 
   // Create player sprite
-  game.spy = this.physics.add.sprite(500, 500, "spy0").setScale(3).setSize(25, 24).setOffset(21, 20);
+  game.spy = this.physics.add.sprite(500, 500, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
 
   // Player bounds
   game.spy.setCollideWorldBounds(true);
@@ -27,7 +27,7 @@ function create() {
     }],
 
     // Options
-    frameRate: 10,
+    frameRate: 8,
     repeat: -1
   });
 }
