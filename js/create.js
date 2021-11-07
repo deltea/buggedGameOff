@@ -22,6 +22,9 @@ function create() {
     game.blocks.create(world.blocks[x][0], world.blocks[x][1], "block").setScale(2).setOffset(-1, 0).setSize(58, 58);
   }
 
+  // Colliders
+  this.physics.add.collider(game.spy, game.blocks);
+
   // Animations
   // Spy run
   this.anims.create({
