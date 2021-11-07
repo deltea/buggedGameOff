@@ -6,6 +6,11 @@ function create() {
   // Create player sprite
   game.spy = this.physics.add.sprite(500, 500, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
 
+  // Camera and bounds
+  this.cameras.main.setBounds(0, 0, 1300, 1000);
+  this.physics.world.setBounds(0, 0, 1300, 1000);
+  this.cameras.main.startFollow(game.spy, true, 0.1, 0.1);
+
   // Player bounds
   game.spy.setCollideWorldBounds(true);
 
