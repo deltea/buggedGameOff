@@ -14,8 +14,14 @@ function create() {
   // Player bounds
   game.spy.setCollideWorldBounds(true);
 
+  // Blocks
+  game.blocks = this.physics.add.staticGroup();
+
+  // Create blocks
+
+
   // Animations
-  // Run
+  // Spy run
   this.anims.create({
     // Animation key
     key: "run",
