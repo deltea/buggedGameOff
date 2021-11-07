@@ -6,6 +6,9 @@ function update() {
     // Move right
     game.spy.setVelocityX(350);
 
+    // Move animation
+    game.spy.anims.play("run", true);
+
     // Flip image
     game.spy.flipX = false;
 
@@ -16,6 +19,10 @@ function update() {
   } else if (game.cursors.left.isDown) {
     // Move left
     game.spy.setVelocityX(-350);
+
+    // Move animation
+    game.spy.anims.play("run", true);
+
     // Flip image
     game.spy.flipX = true;
 
@@ -43,6 +50,6 @@ function update() {
   // Jump
   if (game.cursors.up.isDown && game.spy.body.blocked.down) {
     // Jump
-    game.spy.setVelocityY(-1000);
+    game.spy.setVelocityY(-800);
   }
 }

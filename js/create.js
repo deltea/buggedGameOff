@@ -8,4 +8,26 @@ function create() {
 
   // Player bounds
   game.spy.setCollideWorldBounds(true);
+
+  // Animations
+  // Run
+  this.anims.create({
+    // Animation key
+    key: "run",
+
+    // Frames
+    frames: [{
+      key: "spy2"
+    },
+    {
+      key: "spy1"
+    },
+    {
+      key: "spy0"
+    }],
+
+    // Options
+    frameRate: 10,
+    repeat: -1
+  });
 }
