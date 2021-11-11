@@ -17,10 +17,14 @@ function create() {
   // Blocks
   game.blocks = this.physics.add.staticGroup();
 
+  // Bugs
+  game.bugs = this.physics.add.group();
+
   // Create blocks
   for (var x = 0; x < world.blocks.length; x++) {
     game.blocks.create(world.blocks[x][0] * 58, world.blocks[x][1], "block").setScale(2).setOffset(-1, 0).setSize(58, 58);
   }
+
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
