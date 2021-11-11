@@ -48,4 +48,9 @@ function update() {
     // Jump
     game.spy.setVelocityY(-800);
   }
+
+  // Shoot bug
+  if (keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
+    game.bugs.create(game.spy.x, game.spy.y, "bug").setScale(3);
+  }
 }
