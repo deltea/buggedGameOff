@@ -48,4 +48,13 @@ function update() {
     // Jump
     game.spy.setVelocityY(-800);
   }
+
+  // Shoot bug
+  if (keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
+    if (game.spy.flipX === false) {
+      game.bugs.create(game.spy.x + 50, game.spy.y, "bug").setScale(3).setSize(7, 5).setOffset(23, 30).setVelocityX(300).setVelocityY(-300);
+    } else {
+      game.bugs.create(game.spy.x - 30, game.spy.y, "bug").setScale(3).setSize(7, 5).setOffset(23, 30).setVelocityX(-300).setVelocityY(-300);
+    }
+  }
 }

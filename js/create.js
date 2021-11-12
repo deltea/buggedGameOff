@@ -11,11 +11,15 @@ function create() {
   this.physics.world.setBounds(0, 0, 1300, 1000);
   this.cameras.main.startFollow(game.spy, true, 0.1, 0.1);
 
+  // Blocks
+  game.blocks = this.physics.add.staticGroup();
+
+  // Bugs
+  game.bugs = this.physics.add.group();
+
   // Player bounds
   game.spy.setCollideWorldBounds(true);
 
-  // Blocks
-  game.blocks = this.physics.add.staticGroup();
 
   // Create blocks
   for (var x = 0; x < world.blocks.length; x++) {
@@ -24,6 +28,7 @@ function create() {
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
+  this.physics.add.collider(game.bugs, game.blocks);
 
   // Animations
   // Spy run

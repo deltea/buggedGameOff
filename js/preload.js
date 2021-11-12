@@ -7,4 +7,7 @@ function preload() {
 
   // Load block sprite
   this.load.image("block", "assets/imgs/block.png");
+
+  // Load bug sprite
+  this.load.image("bug", "assets/imgs/bug.png")
 }
