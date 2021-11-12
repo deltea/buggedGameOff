@@ -9,5 +9,8 @@ function preload() {
   this.load.image("block", "assets/imgs/block.png");
 
   // Load bug sprite
-  this.load.image("bug", "assets/imgs/bug.png")
+  this.load.image("bug", "assets/imgs/bug.png");
+  
+  // Load music
+  this.load.sound("music", "assets/sfx/mainTheme.mp3");
 }
