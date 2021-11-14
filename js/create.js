@@ -10,7 +10,9 @@ function create() {
   game.sfx.music.setLoop(true);
 
   // Play music
-  game.sfx.music.play();
+  game.sfx.music.play({
+    volume: 0.3
+  });
 
   // Create player sprite
   game.spy = this.physics.add.sprite(500, 500, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
