@@ -12,5 +12,5 @@ function preload() {
   this.load.image("bug", "assets/imgs/bug.png");
 
   // Load music
-  this.load.sound("music", "assets/sfx/mainTheme.mp3");
+  this.load.audio("music", "assets/sfx/mainTheme.mp3");
 }
