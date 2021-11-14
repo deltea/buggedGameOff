@@ -3,6 +3,15 @@ function create() {
   // Keyboard input
   game.cursors = this.input.keyboard.createCursorKeys();
 
+  // SFX
+  game.sfx.music = this.sound.add("music");
+
+  // Loop background music
+  game.sfx.music.setLoop(true);
+
+  // Play music
+  game.sfx.music.play();
+
   // Create player sprite
   game.spy = this.physics.add.sprite(500, 500, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
 
