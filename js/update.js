@@ -51,6 +51,11 @@ function update() {
 
   // Shoot bug
   if (keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
+    // Play SFX
+    game.sfx.shootBug.play({
+      volume: 0.5
+    });
+
     if (game.spy.flipX === false) {
       let bug = game.bugs.create(game.spy.x + 50, game.spy.y, "bug").setScale(3).setSize(7, 5).setOffset(23, 30).setVelocityX(300).setVelocityY(-300);
       bug.flipX = false;
