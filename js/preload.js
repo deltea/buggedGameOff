@@ -13,4 +13,7 @@ function preload() {
 
   // Load music
   this.load.audio("music", "assets/sfx/mainTheme.mp3");
+
+  // Load SFX
+  this.load.audio("shootBug", "assets/sfx/shootBug.mp3");
 }
