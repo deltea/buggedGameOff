@@ -10,7 +10,7 @@ function preload() {
 
   // Load bug sprite
   this.load.image("bug", "assets/imgs/bug.png");
-  
+
   // Load music
   this.load.sound("music", "assets/sfx/mainTheme.mp3");
 }
