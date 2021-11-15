@@ -47,6 +47,9 @@ function update() {
   if (game.cursors.up.isDown && game.spy.body.blocked.down) {
     // Jump
     game.spy.setVelocityY(-800);
+    
+    // Play jump sound
+    game.sfx.jump.play();
   }
 
   // Shoot bug
