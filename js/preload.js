@@ -16,4 +16,5 @@ function preload() {
 
   // Load SFX
   this.load.audio("shootBug", "assets/sfx/shootBug.mp3");
+  this.load.audio("jump", "assets/sfx/jump.wav");
 }
