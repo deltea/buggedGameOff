@@ -6,6 +6,7 @@ function create() {
   // SFX
   game.sfx.music = this.sound.add("music");
   game.sfx.shootBug = this.sound.add("shootBug");
+  game.sfx.jump = this.sound.add("jump");
 
   // Loop background music
   game.sfx.music.setLoop(true);
