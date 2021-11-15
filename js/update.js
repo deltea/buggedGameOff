@@ -49,7 +49,9 @@ function update() {
     game.spy.setVelocityY(-800);
     
     // Play jump sound
-    game.sfx.jump.play();
+    game.sfx.jump.play({
+      volume: 0.7
+    });
   }
 
   // Shoot bug
