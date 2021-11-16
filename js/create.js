@@ -24,6 +24,11 @@ function create() {
   
   // Doors
   game.doors = this.physics.add.staticGroup();
+  
+  // Create doors
+  for (var x = 0; x < world.doors.length; x++) {
+    game.doors.create(world.doors[x][0] * 58, world.doors[x][1], "door");
+  }
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
