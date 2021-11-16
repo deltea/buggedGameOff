@@ -21,6 +21,9 @@ function create() {
   for (var x = 0; x < world.blocks.length; x++) {
     game.blocks.create(world.blocks[x][0] * 58, world.blocks[x][1], "block").setScale(2).setOffset(-1, 0).setSize(58, 58);
   }
+  
+  // Doors
+  game.doors = this.physics.add.staticGroup();
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
