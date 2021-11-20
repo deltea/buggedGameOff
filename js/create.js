@@ -9,7 +9,7 @@ function create() {
       return false;
     }
   };
-  game.possibleKeys = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  game.possibleKeys = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   // Create player sprite
   game.spy = this.physics.add.sprite(500, 500, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
@@ -42,9 +42,11 @@ function create() {
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
   this.physics.add.collider(game.spy, game.doors, function(spy, door) {
-    if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
-      door.try += "C";
-    }
+    game.possibleKeys.forEach(key => {
+      if (game.keyPress(Phaser.Input.Keyboard.KeyCodes[key])) {
+        door.try += key;
+      }
+    });
     console.log(door.try);
   });
 
