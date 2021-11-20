@@ -32,7 +32,9 @@ function create() {
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
-  this.physics.add.collider(game.spy, game.doors);
+  this.physics.add.collider(game.spy, game.doors, function(spy, door) {
+    console.log("Touching door");
+  });
 
   // Animations
   // Spy run
