@@ -32,6 +32,7 @@ function create() {
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
+  this.physics.add.collider(game.spy, game.doors);
 
   // Animations
   // Spy run
