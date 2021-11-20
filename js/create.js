@@ -2,6 +2,13 @@
 function create() {
   // Keyboard input
   game.cursors = this.input.keyboard.createCursorKeys();
+  game.keyPress = (key) => {
+    if (Phaser.Input.Keyboard.JustDown(this.input.keyboard.addKey(key))) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   // Create player sprite
   game.spy = this.physics.add.sprite(500, 500, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
@@ -22,7 +29,8 @@ function create() {
 
   // Create doors
   for (var x = 0; x < world.doors.length; x++) {
-    game.doors.create(world.doors[x][0], world.doors[x][1], "door").setScale(2).setSize(5, 115).setOffset(29, -25);
+    let door = game.doors.create(world.doors[x][0], world.doors[x][1], "door").setScale(2).setSize(5, 115).setOffset(29, -25);
+    door.try = "";
   }
 
   // Create blocks
@@ -33,7 +41,10 @@ function create() {
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
   this.physics.add.collider(game.spy, game.doors, function(spy, door) {
-    console.log("Touching door");
+    if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
+      door.try += "C";
+    }
+    console.log(door.try);
   });
 
   // Animations

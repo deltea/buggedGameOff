@@ -34,15 +34,6 @@ function update() {
     game.spy.setTexture("spy0");
   }
 
-  // Key function
-  const keyPress = (key) => {
-    if (Phaser.Input.Keyboard.JustDown(this.input.keyboard.addKey(key))) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   // Jump
   if (game.cursors.up.isDown && game.spy.body.blocked.down) {
     // Jump
