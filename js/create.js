@@ -27,7 +27,7 @@ function create() {
 
   // Create doors
   for (var x = 0; x < world.doors.length; x++) {
-    game.doors.create(world.doors[x][0], world.doors[x][1], "door").setScale(2);
+    game.doors.create(world.doors[x][0], world.doors[x][1], "door").setScale(2).setSize(5, 115).setOffset(29, -25);
   }
 
   // Colliders
