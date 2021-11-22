@@ -46,6 +46,9 @@ function create() {
       if (game.keyPress(Phaser.Input.Keyboard.KeyCodes[key])) {
         door.try += key;
       }
+      if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.BACKSPACE)) {
+        door.try = door.try.slice(0, -1);
+      }
     });
     console.log(door.try);
   });
