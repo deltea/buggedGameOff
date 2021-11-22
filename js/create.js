@@ -11,6 +11,9 @@ function create() {
   };
   game.possibleKeys = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
+  // SFX
+  game.sfx.openDoor = this.sound.add("openDoor");
+
   // Create player sprite
   game.spy = this.physics.add.sprite(500, 500, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
 
@@ -53,6 +56,7 @@ function create() {
         door.try += key;
         if (door.try === door.password) {
           console.log("Correct");
+          game.sfx.openDoor.play();
           door.visible = false;
           door.body.enable = false;
           door.try = "";

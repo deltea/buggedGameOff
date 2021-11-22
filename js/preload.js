@@ -10,4 +10,7 @@ function preload() {
 
   // Load block sprite
   this.load.image("block", "assets/imgs/block.png");
+
+  // Load open door sound
+  this.load.audio("openDoor", "assets/sfx/openDoor.ogg");
 }
