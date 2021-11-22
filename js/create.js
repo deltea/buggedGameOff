@@ -35,6 +35,7 @@ function create() {
     door.password = world.doors[x][2];
     door.tryText = this.add.text(door.x, door.y, "", {
       fontSize: 60,
+      fontFamily: "Didact Gothic",
       color: "#000000"
     });
   }
