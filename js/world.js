@@ -73,9 +73,20 @@ const world = {
     [19, 646],
     [20, 646],
     [21, 646],
-    [22, 646]
+    [22, 646],
+
+    // A mini platform
+    [7, 500],
+    [8, 500],
+    [9, 500],
+
+    // Another mini platform
+    [10, 330],
+    [11, 330],
+    [12, 330],
   ],
   doors: [
-    [500, 710, "HELLOWORLD"]
+    [500, 710, "HELLOWORLD"],
+    [550, 410, "HELLOWORLD"]
   ]
 }
