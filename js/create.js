@@ -33,6 +33,10 @@ function create() {
     let door = game.doors.create(world.doors[x][0], world.doors[x][1], "door").setScale(2).setSize(5, 115).setOffset(29, -25);
     door.try = "";
     door.password = world.doors[x][2];
+    door.tryText = this.add.text(door.x, door.y, "", {
+      fontSize: 60,
+      color: "#000000"
+    });
   }
 
   // Create blocks
@@ -50,10 +54,13 @@ function create() {
           console.log("Correct");
           door.visible = false;
           door.body.enable = false;
+          door.try = "";
         }
+        door.tryText.text = door.try;
       }
       if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.BACKSPACE)) {
         door.try = door.try.slice(0, -1);
+        door.tryText.text = door.try;
       }
     });
     console.log(door.try);
