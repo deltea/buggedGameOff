@@ -46,7 +46,7 @@ function update() {
   }
 
   // Shoot bug
-  if (keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
+  if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
     // Play SFX
     game.sfx.shootBug.play({
       volume: 0.5
