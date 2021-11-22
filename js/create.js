@@ -2,6 +2,17 @@
 function create() {
   // Keyboard input
   game.cursors = this.input.keyboard.createCursorKeys();
+  game.keyPress = (key) => {
+    if (Phaser.Input.Keyboard.JustDown(this.input.keyboard.addKey(key))) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  game.possibleKeys = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+  // SFX
+  game.sfx.openDoor = this.sound.add("openDoor");
 
   // SFX
   game.sfx.music = this.sound.add("music");
@@ -33,6 +44,23 @@ function create() {
   // Player bounds
   game.spy.setCollideWorldBounds(true);
 
+  // Doors
+  game.doors = this.physics.add.staticGroup();
+
+  // Blocks
+  game.blocks = this.physics.add.staticGroup();
+
+  // Create doors
+  for (var x = 0; x < world.doors.length; x++) {
+    let door = game.doors.create(world.doors[x][0], world.doors[x][1], "door").setScale(2).setSize(5, 115).setOffset(29, -25);
+    door.try = "";
+    door.password = world.doors[x][2];
+    door.tryText = this.add.text(door.x, door.y, "", {
+      fontSize: 60,
+      fontFamily: "Didact Gothic",
+      color: "#000000"
+    });
+  }
 
   // Create blocks
   for (var x = 0; x < world.blocks.length; x++) {
@@ -41,6 +69,26 @@ function create() {
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
+  this.physics.add.collider(game.spy, game.doors, function(spy, door) {
+    game.possibleKeys.forEach(key => {
+      if (game.keyPress(Phaser.Input.Keyboard.KeyCodes[key])) {
+        door.try += key;
+        if (door.try === door.password) {
+          console.log("Correct");
+          game.sfx.openDoor.play();
+          door.visible = false;
+          door.body.enable = false;
+          door.try = "";
+        }
+        door.tryText.text = door.try;
+      }
+      if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.BACKSPACE)) {
+        door.try = door.try.slice(0, -1);
+        door.tryText.text = door.try;
+      }
+    });
+    console.log(door.try);
+  });
   this.physics.add.collider(game.bugs, game.blocks);
 
   // Animations
