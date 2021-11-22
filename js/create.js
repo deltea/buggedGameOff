@@ -48,6 +48,8 @@ function create() {
         door.try += key;
         if (door.try === door.password) {
           console.log("Correct");
+          door.visible = false;
+          door.body.enable = false;
         }
       }
       if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.BACKSPACE)) {
