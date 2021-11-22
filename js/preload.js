@@ -13,4 +13,14 @@ function preload() {
 
   // Load open door sound
   this.load.audio("openDoor", "assets/sfx/openDoor.ogg");
+
+  // Load bug sprite
+  this.load.image("bug", "assets/imgs/bug.png");
+
+  // Load music
+  this.load.audio("music", "assets/sfx/mainTheme.mp3");
+
+  // Load SFX
+  this.load.audio("shootBug", "assets/sfx/shootBug.mp3");
+  this.load.audio("jump", "assets/sfx/jump.wav");
 }

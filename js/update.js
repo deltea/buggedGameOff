@@ -38,5 +38,26 @@ function update() {
   if (game.cursors.up.isDown && game.spy.body.blocked.down) {
     // Jump
     game.spy.setVelocityY(-800);
+
+    // Play jump sound
+    game.sfx.jump.play({
+      volume: 0.7
+    });
+  }
+
+  // Shoot bug
+  if (keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
+    // Play SFX
+    game.sfx.shootBug.play({
+      volume: 0.5
+    });
+
+    if (game.spy.flipX === false) {
+      let bug = game.bugs.create(game.spy.x + 50, game.spy.y, "bug").setScale(3).setSize(7, 5).setOffset(23, 30).setVelocityX(300).setVelocityY(-300);
+      bug.flipX = false;
+    } else {
+      let bug = game.bugs.create(game.spy.x - 30, game.spy.y, "bug").setScale(3).setSize(7, 5).setOffset(23, 30).setVelocityX(-300).setVelocityY(-300);
+      bug.flipX = true;
+    }
   }
 }

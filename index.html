@@ -12,18 +12,24 @@
       @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
       body {
         background-color: black;
-        overflow: hidden;
+      }
+      .bug-feed {
+        overflow-y: scroll;
+        position: relative;
+        height: 100px;
+        color: white;
       }
     </style>
   </head>
-  <body>
+  <body class="container">
     <!-- Phaser -->
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.min.js"></script>
 
     <!-- Global variables -->
     <script type="text/javascript">
       let game = {
-        sfx: {}
+        sfx: {},
+        bugsOwned: 0
       };
     </script>
 
@@ -37,5 +43,7 @@
 
     <!-- Main Script -->
     <script src="js/script.js" charset="utf-8"></script>
+    <div class="bug-feed">
+    </div>
   </body>
 </html>

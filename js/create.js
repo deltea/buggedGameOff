@@ -14,6 +14,19 @@ function create() {
   // SFX
   game.sfx.openDoor = this.sound.add("openDoor");
 
+  // SFX
+  game.sfx.music = this.sound.add("music");
+  game.sfx.shootBug = this.sound.add("shootBug");
+  game.sfx.jump = this.sound.add("jump");
+
+  // Loop background music
+  game.sfx.music.setLoop(true);
+
+  // Play music
+  game.sfx.music.play({
+    volume: 0.3
+  });
+
   // Create player sprite
   game.spy = this.physics.add.sprite(500, 500, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
 
@@ -21,6 +34,12 @@ function create() {
   this.cameras.main.setBounds(0, 0, 1300, 1000);
   this.physics.world.setBounds(0, 0, 1300, 1000);
   this.cameras.main.startFollow(game.spy, true, 0.1, 0.1);
+
+  // Blocks
+  game.blocks = this.physics.add.staticGroup();
+
+  // Bugs
+  game.bugs = this.physics.add.group();
 
   // Player bounds
   game.spy.setCollideWorldBounds(true);
@@ -70,6 +89,7 @@ function create() {
     });
     console.log(door.try);
   });
+  this.physics.add.collider(game.bugs, game.blocks);
 
   // Animations
   // Spy run
