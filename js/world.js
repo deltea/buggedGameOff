@@ -76,6 +76,6 @@ const world = {
     [22, 646]
   ],
   doors: [
-    [500, 710]
+    [500, 710, "HELLOWORLD"]
   ]
 }
