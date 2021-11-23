@@ -73,6 +73,9 @@ function create() {
   // Create guards
   for (var x = 0; x < world.guards.length; x++) {
     let guard = game.guards.create(world.guards[x][0], world.guards[x][1], "guard0").setScale(2.4).setSize(18, 33).setOffset(22, 15);
+    guard.startX = world.guards[x][0];
+    guard.endX = world.guards[x][2];
+    guard.setVelocityX(100);
   }
 
   // Colliders

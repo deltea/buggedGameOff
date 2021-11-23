@@ -65,5 +65,10 @@ function update() {
   // Guard animation
   game.guards.getChildren().forEach(sprite => {
     sprite.anims.play("guardWalk", true);
+    if (sprite.x >= sprite.endX) {
+      sprite.setVelocityX(-100);
+    } else if (sprite.x <= sprite.startX) {
+      sprite.setVelocityX(100);
+    }
   });
 }
