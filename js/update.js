@@ -67,8 +67,10 @@ function update() {
     sprite.anims.play("guardWalk", true);
     if (sprite.x >= sprite.endX) {
       sprite.setVelocityX(-100);
+      sprite.flipX = true;
     } else if (sprite.x <= sprite.startX) {
       sprite.setVelocityX(100);
+      sprite.flipX = false;
     }
   });
 }
