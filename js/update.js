@@ -60,4 +60,10 @@ function update() {
       bug.flipX = true;
     }
   }
+
+  // Animation
+  // Guard animation
+  game.guards.getChildren().forEach(sprite => {
+    sprite.anims.play("guardWalk", true);
+  });
 }
