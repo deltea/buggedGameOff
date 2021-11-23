@@ -70,6 +70,11 @@ function create() {
     game.blocks.create(world.blocks[x][0] * 58, world.blocks[x][1], "block").setScale(2).setOffset(-1, 0).setSize(58, 58);
   }
 
+  // Create guards
+  for (var x = 0; x < world.guards.length; x++) {
+    game.guards.create(world.guards[x][0], world.guards[x][1], "guard0");
+  }
+
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
   this.physics.add.collider(game.spy, game.doors, function(spy, door) {
