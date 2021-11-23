@@ -41,6 +41,9 @@ function create() {
   // Bugs
   game.bugs = this.physics.add.group();
 
+  // Guards
+  game.guards = this.physics.add.group();
+
   // Player bounds
   game.spy.setCollideWorldBounds(true);
 
