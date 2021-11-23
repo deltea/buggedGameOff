@@ -72,7 +72,7 @@ function create() {
 
   // Create guards
   for (var x = 0; x < world.guards.length; x++) {
-    game.guards.create(world.guards[x][0], world.guards[x][1], "guard0");
+    let guard = game.guards.create(world.guards[x][0], world.guards[x][1], "guard0");
   }
 
   // Colliders
@@ -98,6 +98,7 @@ function create() {
     console.log(door.try);
   });
   this.physics.add.collider(game.bugs, game.blocks);
+  this.physics.add.collider(game.guards, game.blocks);
 
   // Animations
   // Spy run
