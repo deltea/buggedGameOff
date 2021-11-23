@@ -121,4 +121,25 @@ function create() {
     frameRate: 8,
     repeat: -1
   });
+
+  // Guard walk
+  this.anims.create({
+    // Animation key
+    key: "guardWalk",
+
+    // Frames
+    frames: [{
+      key: "guard2"
+    },
+    {
+      key: "guard1"
+    },
+    {
+      key: "guard0"
+    }],
+
+    // Options
+    frameRate: 8,
+    repeat: -1
+  });
 }
