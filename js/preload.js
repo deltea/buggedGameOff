@@ -22,6 +22,11 @@ function preload() {
   this.load.image("guard1", "assets/imgs/guard1.png");
   this.load.image("guard2", "assets/imgs/guard2.png");
 
+  // Load bugged guard sprites
+  this.load.image("buggedGuard0", "assets/imgs/buggedGuard0.png");
+  this.load.image("buggedGuard1", "assets/imgs/buggedGuard1.png");
+  this.load.image("buggedGuard2", "assets/imgs/buggedGuard2.png");
+
   // Load music
   this.load.audio("music", "assets/sfx/mainTheme.mp3");
 
