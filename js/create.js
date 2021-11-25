@@ -102,6 +102,9 @@ function create() {
   });
   this.physics.add.collider(game.bugs, game.blocks);
   this.physics.add.collider(game.guards, game.blocks);
+  this.physics.add.collider(game.bugs, game.guards, function(bug, guard) {
+    bug.destroy();
+  });
 
   // Animations
   // Spy run
@@ -139,6 +142,27 @@ function create() {
     },
     {
       key: "guard0"
+    }],
+
+    // Options
+    frameRate: 8,
+    repeat: -1
+  });
+
+  // Bugged guard walk
+  this.anims.create({
+    // Animation key
+    key: "buggedGuardWalk",
+
+    // Frames
+    frames: [{
+      key: "buggedGuard2"
+    },
+    {
+      key: "buggedGuard1"
+    },
+    {
+      key: "buggedGuard0"
     }],
 
     // Options
