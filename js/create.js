@@ -18,6 +18,8 @@ function create() {
   game.sfx.music = this.sound.add("music");
   game.sfx.shootBug = this.sound.add("shootBug");
   game.sfx.jump = this.sound.add("jump");
+  game.sfx.attachBug = this.sound.add("attachBug");
+  game.sfx.passwordEnter = this.sound.add("passwordEnter");
 
   // Loop background music
   game.sfx.music.setLoop(true);
@@ -84,6 +86,7 @@ function create() {
   this.physics.add.collider(game.spy, game.doors, function(spy, door) {
     game.possibleKeys.forEach(key => {
       if (game.keyPress(Phaser.Input.Keyboard.KeyCodes[key])) {
+        game.sfx.passwordEnter.play();
         door.try += key;
         if (door.try === door.password) {
           console.log("Correct");
@@ -95,6 +98,7 @@ function create() {
         door.tryText.text = door.try;
       }
       if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.BACKSPACE)) {
+        game.sfx.passwordEnter.play();
         door.try = door.try.slice(0, -1);
         door.tryText.text = door.try;
       }
@@ -104,6 +108,7 @@ function create() {
   this.physics.add.collider(game.bugs, game.blocks);
   this.physics.add.collider(game.guards, game.blocks);
   this.physics.add.collider(game.bugs, game.guards, function(bug, guard) {
+    game.sfx.attachBug.play();
     guard.bugged = true;
     bug.destroy();
   });
