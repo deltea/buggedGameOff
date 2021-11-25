@@ -75,6 +75,7 @@ function create() {
     let guard = game.guards.create(world.guards[x][0], world.guards[x][1], "guard0").setScale(3).setSize(18, 33).setOffset(22, 15);
     guard.startX = world.guards[x][0];
     guard.endX = world.guards[x][2];
+    guard.bugged = false;
     guard.setVelocityX(100);
   }
 
@@ -103,6 +104,7 @@ function create() {
   this.physics.add.collider(game.bugs, game.blocks);
   this.physics.add.collider(game.guards, game.blocks);
   this.physics.add.collider(game.bugs, game.guards, function(bug, guard) {
+    guard.bugged = true;
     bug.destroy();
   });
 
