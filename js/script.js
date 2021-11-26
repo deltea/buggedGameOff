@@ -5,8 +5,7 @@ const config = {
 
   // Scaling
   scale: {
-    autoCenter: Phaser.Scale.CENTER_BOTH,
-    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH
   },
 
   // Rendering options
@@ -15,8 +14,8 @@ const config = {
   },
 
   // Proportions
-  width: 1300,
-	height: 643,
+  width: 1000,
+	height: 343,
 
   // Color of sky
   backgroundColor: 0xffffff,
@@ -35,7 +34,7 @@ const config = {
 
       // Options
       enableBody: true,
-      // debug: true
+      debug: true
     }
   },
 
