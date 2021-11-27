@@ -112,6 +112,12 @@ function create() {
     guard.bugged = true;
     bug.destroy();
   });
+  this.physics.add.collider(game.spy, game.guards, function(spy, guard) {
+    if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.X) && guard.bugged === true) {
+      guard.bugged = false;
+      game.bugDeployed = false;
+    }
+  });
 
   // Animations
   // Spy run
