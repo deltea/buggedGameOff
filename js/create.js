@@ -107,12 +107,12 @@ function create() {
   });
   this.physics.add.collider(game.bugs, game.blocks);
   this.physics.add.collider(game.guards, game.blocks);
-  this.physics.add.collider(game.bugs, game.guards, function(bug, guard) {
+  this.physics.add.overlap(game.bugs, game.guards, function(bug, guard) {
     game.sfx.attachBug.play();
     guard.bugged = true;
     bug.destroy();
   });
-  this.physics.add.collider(game.spy, game.guards, function(spy, guard) {
+  this.physics.add.overlap(game.spy, game.guards, function(spy, guard) {
     if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.X) && guard.bugged === true) {
       guard.bugged = false;
       game.bugDeployed = false;
