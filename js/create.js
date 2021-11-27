@@ -118,6 +118,12 @@ function create() {
       game.bugDeployed = false;
     }
   });
+  this.physics.add.overlap(game.spy, game.bugs, function(spy, bug) {
+    if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.X)) {
+      game.bugDeployed = false;
+      bug.destroy();
+    }
+  });
 
   // Animations
   // Spy run
