@@ -132,6 +132,9 @@ function create() {
       bug.destroy();
     }
   });
+  this.physics.add.overlap(game.spy, game.flashlightBeams, function(spy, beam) {
+    console.log("Game Over");
+  });
 
   // Animations
   // Spy run
