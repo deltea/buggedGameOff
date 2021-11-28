@@ -80,5 +80,12 @@ const world = {
   ],
   guards: [
     [500, 500, 700]
+  ],
+  instructions: [
+    // Add move instructions
+    [200, 865, "Use the arrow keys to move"],
+
+    // Add jump instructions
+    [800, 865, "Use the up key to jump"]
   ]
 }

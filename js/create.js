@@ -140,19 +140,13 @@ function create() {
   });
 
   // Instructions
-  // Add move instructions
-  this.add.text(200, 865, "Use the arrow keys to move", {
-    fontSize: 40,
-    fontFamily: "Didact Gothic",
-    color: "#000000"
-  });
-
-  // Add jump instructions
-  this.add.text(800, 865, "Use the up key to jump", {
-    fontSize: 40,
-    fontFamily: "Didact Gothic",
-    color: "#000000"
-  });
+  for (var x = 0; x < world.instructions.length; x++) {
+    this.add.text(world.instructions[x][0], world.instructions[x][1], world.instructions[x][2], {
+      fontSize: 40,
+      fontFamily: "Didact Gothic",
+      color: "#000000"
+    });
+  }
 
   // Animations
   // Spy run
