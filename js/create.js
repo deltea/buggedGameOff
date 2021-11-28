@@ -85,7 +85,7 @@ function create() {
     guard.setVelocityX(100);
 
     // Create flashlight beam
-    let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y, "flashlightBeam").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setSize(20, 50).setOffset(22, 8);
+    let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y + 80, "flashlightBeam").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setSize(20, 50).setOffset(22, 8);
     guard.beam = flashlightBeam;
   }
 
