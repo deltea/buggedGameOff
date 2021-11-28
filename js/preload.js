@@ -30,6 +30,10 @@ function preload() {
   // Load flashlight beam
   this.load.image("flashlightBeam", "assets/imgs/flashlightBeam.png");
 
+  // Load winning objectives
+  this.load.image("folder", "assets/imgs/folder.png");
+  this.load.image("files", "assets/imgs/files.png");
+
   // Load music
   this.load.audio("music", "assets/sfx/mainTheme.mp3");
 
