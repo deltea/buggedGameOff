@@ -149,7 +149,7 @@ function create() {
   }
 
   // Folders and files
-  this.physics.add.staticSprite(world.files[0], world.files[1], "folder").setScale(3);
+  this.physics.add.staticSprite(world.files[0], world.files[1], "folder").setScale(3).setSize(75, 55).setOffset(-10, 0);
 
   // Animations
   // Spy run
