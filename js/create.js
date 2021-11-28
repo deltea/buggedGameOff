@@ -20,6 +20,7 @@ function create() {
   game.sfx.jump = this.sound.add("jump");
   game.sfx.attachBug = this.sound.add("attachBug");
   game.sfx.passwordEnter = this.sound.add("passwordEnter");
+  game.sfx.removeBug = this.sound.add("removeBug");
 
   // Loop background music
   game.sfx.music.setLoop(true);
@@ -122,12 +123,14 @@ function create() {
   });
   this.physics.add.overlap(game.spy, game.guards, function(spy, guard) {
     if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.X) && guard.bugged === true) {
+      game.sfx.removeBug.play();
       guard.bugged = false;
       game.bugDeployed = false;
     }
   });
   this.physics.add.overlap(game.spy, game.bugs, function(spy, bug) {
     if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.X)) {
+      game.sfx.removeBug.play();
       game.bugDeployed = false;
       bug.destroy();
     }
