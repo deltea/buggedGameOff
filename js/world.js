@@ -76,9 +76,19 @@ const world = {
     [22, 646]
   ],
   doors: [
-    [500, 710, "HELLOWORLD"]
+    [300, 710, "HELLOWORLD"]
   ],
   guards: [
     [500, 500, 700]
+  ],
+  instructions: [
+    // Add move instructions
+    [200, 865, "Use the arrow keys to move"],
+
+    // Add jump instructions
+    [800, 865, "Use the up key to jump"],
+
+    // Add deploy and take bug instructions
+    [370, 700, "Press the C and X keys to deploy and take a bug"]
   ]
 }

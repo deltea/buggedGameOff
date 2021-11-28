@@ -139,6 +139,15 @@ function create() {
     console.log("Game Over");
   });
 
+  // Instructions
+  for (var x = 0; x < world.instructions.length; x++) {
+    this.add.text(world.instructions[x][0], world.instructions[x][1], world.instructions[x][2], {
+      fontSize: 40,
+      fontFamily: "Didact Gothic",
+      color: "#000000"
+    });
+  }
+
   // Animations
   // Spy run
   this.anims.create({
