@@ -139,6 +139,14 @@ function create() {
     console.log("Game Over");
   });
 
+  // Instructions
+  // Add move instructions
+  this.add.text(200, 865, "Use the arrow keys to move", {
+    fontSize: 40,
+    fontFamily: "Didact Gothic",
+    color: "#000000"
+  });
+
   // Animations
   // Spy run
   this.anims.create({
