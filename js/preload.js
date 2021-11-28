@@ -38,4 +38,5 @@ function preload() {
   this.load.audio("jump", "assets/sfx/jump.wav");
   this.load.audio("attachBug", "assets/sfx/bugAttach.mp3");
   this.load.audio("passwordEnter", "assets/sfx/passwordEnter.ogg");
+  this.load.audio("removeBug", "assets/sfx/removeBug.mp3");
 }
