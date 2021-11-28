@@ -139,7 +139,7 @@ function create() {
     console.log("Game Over");
   });
 
-  // Instructions
+  // Create instructions
   for (var x = 0; x < world.instructions.length; x++) {
     this.add.text(world.instructions[x][0], world.instructions[x][1], world.instructions[x][2], {
       fontSize: 40,
@@ -147,6 +147,9 @@ function create() {
       color: "#000000"
     });
   }
+
+  // Folders and files
+  this.physics.add.staticSprite(world.files[0], world.files[1], "folder").setScale(3);
 
   // Animations
   // Spy run
