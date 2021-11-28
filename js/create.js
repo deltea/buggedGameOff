@@ -91,7 +91,7 @@ function create() {
   }
 
   // Folders and files
-  this.physics.add.staticSprite(world.files[0], world.files[1], "folder").setScale(3).setSize(75, 55).setOffset(-10, 0);
+  game.files = this.physics.add.staticSprite(world.files[0], world.files[1], "folder").setScale(3).setSize(75, 55).setOffset(-10, 0);
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
@@ -140,6 +140,11 @@ function create() {
   });
   this.physics.add.overlap(game.spy, game.flashlightBeams, function(spy, beam) {
     console.log("Game Over");
+  });
+  this.physics.add.overlap(game.spy, game.files, function(spy, files) {
+    if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
+      files.setTexture("files");
+    }
   });
 
   // Create instructions
