@@ -56,7 +56,7 @@ function create() {
   game.blocks = this.physics.add.staticGroup();
 
   // Flashlight beams
-  game.flashlightBeams = this.physics.add.staticGroup();
+  game.flashlightBeams = this.physics.add.group();
 
   // Create doors
   for (var x = 0; x < world.doors.length; x++) {
@@ -85,7 +85,7 @@ function create() {
     guard.setVelocityX(100);
 
     // Create flashlight beam
-    let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y, "flashlightBeam").setScale(3);
+    let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y, "flashlightBeam").setScale(3).setGravityY(-config.physics.arcade.gravity.y);
     guard.beam = flashlightBeam;
   }
 
