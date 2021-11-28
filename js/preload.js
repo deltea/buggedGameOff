@@ -30,6 +30,9 @@ function preload() {
   // Load flashlight beam
   this.load.image("flashlightBeam", "assets/imgs/flashlightBeam.png");
 
+  // Load exclamation effect
+  this.load.image("exclamation", "assets/imgs/exclamation.png");
+
   // Load music
   this.load.audio("music", "assets/sfx/mainTheme.mp3");
 
