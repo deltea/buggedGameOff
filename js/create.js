@@ -91,7 +91,10 @@ function create() {
   }
 
   // Folders and files
-  game.files = this.physics.add.staticSprite(world.files[0], world.files[1], "folder").setScale(3).setSize(75, 55).setOffset(-10, 0);
+  game.files = this.physics.add.sprite(world.files[0], world.files[1], "folder").setScale(3).setSize(75, 55).setOffset(-10, 0).setGravityY(-config.physics.arcade.gravity.y);
+
+  // Wind effect
+  game.wind = this.physics.add.group();
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
@@ -144,6 +147,10 @@ function create() {
   this.physics.add.overlap(game.spy, game.files, function(spy, files) {
     if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
       files.setTexture("files");
+      game.wind.create(0, files.y, "wind0").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setVelocityX(1000);
+      setTimeout(function() {
+        files.setVelocityX(1000);
+      }, 500);
     }
   });
 
