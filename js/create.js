@@ -90,6 +90,9 @@ function create() {
     guard.beam = flashlightBeam;
   }
 
+  // Folders and files
+  this.physics.add.staticSprite(world.files[0], world.files[1], "folder").setScale(3).setSize(75, 55).setOffset(-10, 0);
+
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
   this.physics.add.collider(game.spy, game.doors, function(spy, door) {
@@ -147,9 +150,6 @@ function create() {
       color: "#000000"
     });
   }
-
-  // Folders and files
-  this.physics.add.staticSprite(world.files[0], world.files[1], "folder").setScale(3).setSize(75, 55).setOffset(-10, 0);
 
   // Animations
   // Spy run
