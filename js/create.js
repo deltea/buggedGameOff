@@ -147,6 +147,13 @@ function create() {
     color: "#000000"
   });
 
+  // Add jump instructions
+  this.add.text(800, 865, "Use the up key to jump", {
+    fontSize: 40,
+    fontFamily: "Didact Gothic",
+    color: "#000000"
+  });
+
   // Animations
   // Spy run
   this.anims.create({
