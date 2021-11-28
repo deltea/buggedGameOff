@@ -226,4 +226,25 @@ function create() {
     frameRate: 8,
     repeat: -1
   });
+
+  // Wind animation
+  this.anims.create({
+    // Animation key
+    key: "wind",
+
+    // Frames
+    frames: [{
+      key: "wind2"
+    },
+    {
+      key: "wind1"
+    },
+    {
+      key: "wind0"
+    }],
+
+    // Options
+    frameRate: 8,
+    repeat: -1
+  });
 }

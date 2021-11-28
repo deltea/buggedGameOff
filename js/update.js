@@ -93,4 +93,9 @@ function update() {
       sprite.beam.x = sprite.x + 100;
     }
   });
+
+  // Wind animation
+  game.wind.getChildren().forEach(sprite => {
+    sprite.anims.play("wind", true);
+  });
 }
