@@ -55,6 +55,9 @@ function create() {
   // Blocks
   game.blocks = this.physics.add.staticGroup();
 
+  // Flashlight beams
+  game.flashlightBeams = this.physics.add.staticGroup();
+
   // Create doors
   for (var x = 0; x < world.doors.length; x++) {
     let door = game.doors.create(world.doors[x][0], world.doors[x][1], "door").setScale(2).setSize(5, 115).setOffset(29, -25);
