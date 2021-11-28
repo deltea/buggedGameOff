@@ -18,6 +18,8 @@ function create() {
   game.sfx.music = this.sound.add("music");
   game.sfx.shootBug = this.sound.add("shootBug");
   game.sfx.jump = this.sound.add("jump");
+  game.sfx.attachBug = this.sound.add("attachBug");
+  game.sfx.passwordEnter = this.sound.add("passwordEnter");
 
   // Loop background music
   game.sfx.music.setLoop(true);
@@ -40,6 +42,9 @@ function create() {
 
   // Bugs
   game.bugs = this.physics.add.group();
+
+  // Guards
+  game.guards = this.physics.add.group();
 
   // Player bounds
   game.spy.setCollideWorldBounds(true);
@@ -67,11 +72,21 @@ function create() {
     game.blocks.create(world.blocks[x][0] * 58, world.blocks[x][1], "block").setScale(2).setOffset(-1, 0).setSize(58, 58);
   }
 
+  // Create guards
+  for (var x = 0; x < world.guards.length; x++) {
+    let guard = game.guards.create(world.guards[x][0], world.guards[x][1], "guard0").setScale(3).setSize(18, 33).setOffset(22, 15);
+    guard.startX = world.guards[x][0];
+    guard.endX = world.guards[x][2];
+    guard.bugged = false;
+    guard.setVelocityX(100);
+  }
+
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
   this.physics.add.collider(game.spy, game.doors, function(spy, door) {
     game.possibleKeys.forEach(key => {
       if (game.keyPress(Phaser.Input.Keyboard.KeyCodes[key])) {
+        game.sfx.passwordEnter.play();
         door.try += key;
         if (door.try === door.password) {
           console.log("Correct");
@@ -83,6 +98,7 @@ function create() {
         door.tryText.text = door.try;
       }
       if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.BACKSPACE)) {
+        game.sfx.passwordEnter.play();
         door.try = door.try.slice(0, -1);
         door.tryText.text = door.try;
       }
@@ -90,6 +106,24 @@ function create() {
     console.log(door.try);
   });
   this.physics.add.collider(game.bugs, game.blocks);
+  this.physics.add.collider(game.guards, game.blocks);
+  this.physics.add.overlap(game.bugs, game.guards, function(bug, guard) {
+    game.sfx.attachBug.play();
+    guard.bugged = true;
+    bug.destroy();
+  });
+  this.physics.add.overlap(game.spy, game.guards, function(spy, guard) {
+    if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.X) && guard.bugged === true) {
+      guard.bugged = false;
+      game.bugDeployed = false;
+    }
+  });
+  this.physics.add.overlap(game.spy, game.bugs, function(spy, bug) {
+    if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.X)) {
+      game.bugDeployed = false;
+      bug.destroy();
+    }
+  });
 
   // Animations
   // Spy run
@@ -106,6 +140,48 @@ function create() {
     },
     {
       key: "spy0"
+    }],
+
+    // Options
+    frameRate: 8,
+    repeat: -1
+  });
+
+  // Guard walk
+  this.anims.create({
+    // Animation key
+    key: "guardWalk",
+
+    // Frames
+    frames: [{
+      key: "guard2"
+    },
+    {
+      key: "guard1"
+    },
+    {
+      key: "guard0"
+    }],
+
+    // Options
+    frameRate: 8,
+    repeat: -1
+  });
+
+  // Bugged guard walk
+  this.anims.create({
+    // Animation key
+    key: "buggedGuardWalk",
+
+    // Frames
+    frames: [{
+      key: "buggedGuard2"
+    },
+    {
+      key: "buggedGuard1"
+    },
+    {
+      key: "buggedGuard0"
     }],
 
     // Options

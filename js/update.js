@@ -56,10 +56,10 @@ function update() {
       });
 
       if (game.spy.flipX === false) {
-        let bug = game.bugs.create(game.spy.x + 50, game.spy.y, "bug").setScale(3).setSize(7, 5).setOffset(23, 30).setVelocityX(300).setVelocityY(-300);
+        let bug = game.bugs.create(game.spy.x + 50, game.spy.y, "bug").setScale(3).setSize(7, 5).setOffset(23, 30).setVelocityX(400).setVelocityY(-300).setDrag(100).setCollideWorldBounds(true);
         bug.flipX = false;
       } else {
-        let bug = game.bugs.create(game.spy.x - 30, game.spy.y, "bug").setScale(3).setSize(7, 5).setOffset(35, 30).setVelocityX(-300).setVelocityY(-300);
+        let bug = game.bugs.create(game.spy.x - 30, game.spy.y, "bug").setScale(3).setSize(7, 5).setOffset(35, 30).setVelocityX(-300).setVelocityY(-400).setDrag(100).setCollideWorldBounds(true);
         bug.flipX = true;
       }
 
@@ -67,4 +67,21 @@ function update() {
       game.bugDeployed = true;
     }
   }
+
+  // Animation
+  // Guard animation
+  game.guards.getChildren().forEach(sprite => {
+    if (sprite.bugged === false) {
+      sprite.anims.play("guardWalk", true);
+    } else {
+      sprite.anims.play("buggedGuardWalk", true);
+    }
+    if (sprite.x >= sprite.endX) {
+      sprite.setVelocityX(-100);
+      sprite.flipX = true;
+    } else if (sprite.x <= sprite.startX) {
+      sprite.setVelocityX(100);
+      sprite.flipX = false;
+    }
+  });
 }
