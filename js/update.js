@@ -83,5 +83,8 @@ function update() {
       sprite.setVelocityX(100);
       sprite.flipX = false;
     }
+
+    // Update flashlight beam
+    sprite.beam.x = sprite.x;
   });
 }
