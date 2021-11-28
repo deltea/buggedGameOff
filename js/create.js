@@ -146,6 +146,9 @@ function create() {
   });
   this.physics.add.overlap(game.spy, game.files, function(spy, files) {
     if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
+      game.win = true;
+      game.spy.setVelocityX(0);
+      game.spy.anims.stop();
       files.setTexture("files");
       setTimeout(function() {
         game.wind.create(0, files.y, "wind0").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setVelocityX(1000);
