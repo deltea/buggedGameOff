@@ -89,8 +89,10 @@ function update() {
     // Update flashlight beam
     if (sprite.flipX) {
       sprite.beam.x = sprite.x - 100;
+      sprite.beam.y = sprite.y + 15;
     } else {
       sprite.beam.x = sprite.x + 100;
+      sprite.beam.y = sprite.y + 15;
     }
   });
 }
