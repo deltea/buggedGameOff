@@ -1,5 +1,7 @@
 // Create animations, sprites, and colliders
 function create() {
+  const phaser = this;
+
   // Keyboard input
   game.cursors = this.input.keyboard.createCursorKeys();
   game.keyPress = (key) => {
@@ -156,6 +158,9 @@ function create() {
           files.setVelocityX(1000);
         }, 500);
       }, 1000);
+      setTimeout(function() {
+        phaser.cameras.main.fadeOut(2000, 0, 0, 0);
+      }, 2000);
     }
   });
 
