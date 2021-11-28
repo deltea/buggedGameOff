@@ -55,6 +55,9 @@ function create() {
   // Blocks
   game.blocks = this.physics.add.staticGroup();
 
+  // Flashlight beams
+  game.flashlightBeams = this.physics.add.group();
+
   // Create doors
   for (var x = 0; x < world.doors.length; x++) {
     let door = game.doors.create(world.doors[x][0], world.doors[x][1], "door").setScale(2).setSize(5, 115).setOffset(29, -25);
@@ -74,11 +77,16 @@ function create() {
 
   // Create guards
   for (var x = 0; x < world.guards.length; x++) {
+    // Create guard
     let guard = game.guards.create(world.guards[x][0], world.guards[x][1], "guard0").setScale(3).setSize(18, 33).setOffset(22, 15);
     guard.startX = world.guards[x][0];
     guard.endX = world.guards[x][2];
     guard.bugged = false;
     guard.setVelocityX(100);
+
+    // Create flashlight beam
+    let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y + 80, "flashlightBeam").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setSize(20, 50).setOffset(22, 8);
+    guard.beam = flashlightBeam;
   }
 
   // Colliders
@@ -123,6 +131,9 @@ function create() {
       game.bugDeployed = false;
       bug.destroy();
     }
+  });
+  this.physics.add.overlap(game.spy, game.flashlightBeams, function(spy, beam) {
+    console.log("Game Over");
   });
 
   // Animations

@@ -79,9 +79,18 @@ function update() {
     if (sprite.x >= sprite.endX) {
       sprite.setVelocityX(-100);
       sprite.flipX = true;
+      sprite.beam.flipX = false;
     } else if (sprite.x <= sprite.startX) {
       sprite.setVelocityX(100);
       sprite.flipX = false;
+      sprite.beam.flipX = true;
+    }
+
+    // Update flashlight beam
+    if (sprite.flipX) {
+      sprite.beam.x = sprite.x - 100;
+    } else {
+      sprite.beam.x = sprite.x + 100;
     }
   });
 }
