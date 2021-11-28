@@ -147,10 +147,12 @@ function create() {
   this.physics.add.overlap(game.spy, game.files, function(spy, files) {
     if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
       files.setTexture("files");
-      game.wind.create(0, files.y, "wind0").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setVelocityX(1000);
       setTimeout(function() {
-        files.setVelocityX(1000);
-      }, 500);
+        game.wind.create(0, files.y, "wind0").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setVelocityX(1000);
+        setTimeout(function() {
+          files.setVelocityX(1000);
+        }, 500);
+      }, 1000);
     }
   });
 
