@@ -91,7 +91,7 @@ function create() {
   }
 
   // Exclamation point
-  game.exclamations = game.physics.add.staticGroup();
+  game.exclamations = this.physics.add.staticGroup();
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
@@ -140,6 +140,7 @@ function create() {
   });
   this.physics.add.overlap(game.spy, game.flashlightBeams, function(spy, beam) {
     console.log("Game Over");
+    game.exclamations.create(beam.x, beam.y, "exclamation");
   });
 
   // Instructions
