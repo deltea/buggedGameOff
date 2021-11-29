@@ -91,5 +91,5 @@ const world = {
     // Add deploy and take bug instructions
     [370, 700, "Press the C and X keys to deploy and take a bug"]
   ],
-  files: [500, 900]
+  files: [0, 0]
 }
