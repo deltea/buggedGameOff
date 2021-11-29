@@ -90,6 +90,9 @@ function create() {
     guard.beam = flashlightBeam;
   }
 
+  // Exclamation point
+  game.exclamations = game.physics.add.staticGroup();
+
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
   this.physics.add.collider(game.spy, game.doors, function(spy, door) {
