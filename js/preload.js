@@ -30,6 +30,9 @@ function preload() {
   // Load flashlight beam
   this.load.image("flashlightBeam", "assets/imgs/flashlightBeam.png");
 
+  // Load exclamation effect
+  this.load.image("exclamation", "assets/imgs/exclamation.png");
+
   // Load winning objectives
   this.load.image("folder", "assets/imgs/folder.png");
   this.load.image("files", "assets/imgs/files.png");

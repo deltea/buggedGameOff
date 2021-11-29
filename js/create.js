@@ -90,7 +90,11 @@ function create() {
     // Create flashlight beam
     let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y + 80, "flashlightBeam").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setSize(20, 50).setOffset(22, 8);
     guard.beam = flashlightBeam;
+    flashlightBeam.guard = guard;
   }
+
+  // Exclamation point
+  game.exclamation = this.physics.add.staticSprite(0, 0, "exclamation").setScale(3);
 
   // Folders and files
   game.files = this.physics.add.sprite(world.files[0], world.files[1], "folder").setScale(3).setSize(75, 55).setOffset(-10, 0).setGravityY(-config.physics.arcade.gravity.y);
@@ -144,7 +148,20 @@ function create() {
     }
   });
   this.physics.add.overlap(game.spy, game.flashlightBeams, function(spy, beam) {
-    console.log("Game Over");
+    if (!game.spotted) {
+      console.log("Game Over");
+      game.spotted = true;
+      game.exclamation.x = beam.guard.x;
+      game.exclamation.y = beam.guard.y - 60;
+      game.exclamation.visible = true;
+      beam.guard.setVelocityX(0);
+      beam.guard.anims.stop();
+      game.spy.setVelocityX(0);
+      game.spy.anims.stop();
+      setTimeout(function() {
+        phaser.cameras.main.fadeOut(2000, 0, 0, 0);
+      }, 1000);
+    }
   });
   this.physics.add.overlap(game.spy, game.files, function(spy, files) {
     if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
