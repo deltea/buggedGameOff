@@ -79,7 +79,11 @@ const world = {
     [300, 710, "HELLOWORLD"]
   ],
   guards: [
-    [500, 500, 700]
+    [500, 500, 700, "Guard 1", [
+      "Oh, by the way, the password for door 1 is DOGGY.",
+      "Really?! I think Bowser would win.",
+      "Hey, who do you think would win: Bowser or The Hulk?"
+    ]]
   ],
   instructions: [
     // Add move instructions
