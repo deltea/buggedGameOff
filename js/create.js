@@ -97,6 +97,7 @@ function create() {
       // Callback
       callback: () => {
         addToBugFeed(guard.name, guard.scripts[guard.addToFeedTimer.repeatCount]);
+        scrollToBottom();
       },
       callbackScope: this,
 
