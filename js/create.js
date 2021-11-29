@@ -88,10 +88,11 @@ function create() {
     // Create flashlight beam
     let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y + 80, "flashlightBeam").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setSize(20, 50).setOffset(22, 8);
     guard.beam = flashlightBeam;
+    flashlightBeam.guard = guard;
   }
 
   // Exclamation point
-  game.exclamations = this.physics.add.staticGroup();
+  game.exclamation = this.physics.add.staticSprite(0, 0, "exclamation").setScale(3);
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
@@ -140,7 +141,14 @@ function create() {
   });
   this.physics.add.overlap(game.spy, game.flashlightBeams, function(spy, beam) {
     console.log("Game Over");
-    game.exclamations.create(beam.x, beam.y, "exclamation");
+    game.spotted = true;
+    game.exclamation.x = beam.guard.x;
+    game.exclamation.y = beam.guard.y - 60;
+    game.exclamation.visible = true;
+    beam.guard.setVelocityX(0);
+    beam.guard.anims.stop();
+    game.spy.setVelocityX(0);
+    game.spy.anims.stop();
   });
 
   // Instructions
