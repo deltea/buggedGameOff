@@ -33,6 +33,15 @@ function preload() {
   // Load exclamation effect
   this.load.image("exclamation", "assets/imgs/exclamation.png");
 
+  // Load winning objectives
+  this.load.image("folder", "assets/imgs/folder.png");
+  this.load.image("files", "assets/imgs/files.png");
+
+  // Load wind effect
+  this.load.image("wind0", "assets/imgs/wind0.png");
+  this.load.image("wind1", "assets/imgs/wind1.png");
+  this.load.image("wind2", "assets/imgs/wind2.png");
+
   // Load music
   this.load.audio("music", "assets/sfx/mainTheme.mp3");
 

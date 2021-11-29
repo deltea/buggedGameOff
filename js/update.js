@@ -1,7 +1,7 @@
 // Update animations and sprite movement
 function update() {
   // Controls
-  if (!game.spotted) {
+  if (!game.spotted && !game.win) {
     // Right
     if (game.cursors.right.isDown) {
       // Move right
@@ -96,5 +96,10 @@ function update() {
     } else {
       sprite.beam.x = sprite.x + 100;
     }
+  });
+
+  // Wind animation
+  game.wind.getChildren().forEach(sprite => {
+    sprite.anims.play("wind", true);
   });
 }

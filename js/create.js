@@ -96,6 +96,12 @@ function create() {
   // Exclamation point
   game.exclamation = this.physics.add.staticSprite(0, 0, "exclamation").setScale(3);
 
+  // Folders and files
+  game.files = this.physics.add.sprite(world.files[0], world.files[1], "folder").setScale(3).setSize(75, 55).setOffset(-10, 0).setGravityY(-config.physics.arcade.gravity.y);
+
+  // Wind effect
+  game.wind = this.physics.add.group();
+
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
   this.physics.add.collider(game.spy, game.doors, function(spy, door) {
@@ -157,8 +163,25 @@ function create() {
       }, 1000);
     }
   });
+  this.physics.add.overlap(game.spy, game.files, function(spy, files) {
+    if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
+      game.win = true;
+      game.spy.setVelocityX(0);
+      game.spy.anims.stop();
+      files.setTexture("files");
+      setTimeout(function() {
+        game.wind.create(0, files.y, "wind0").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setVelocityX(1000);
+        setTimeout(function() {
+          files.setVelocityX(1000);
+        }, 500);
+      }, 1000);
+      setTimeout(function() {
+        phaser.cameras.main.fadeOut(2000, 0, 0, 0);
+      }, 2000);
+    }
+  });
 
-  // Instructions
+  // Create instructions
   for (var x = 0; x < world.instructions.length; x++) {
     this.add.text(world.instructions[x][0], world.instructions[x][1], world.instructions[x][2], {
       fontSize: 40,
@@ -224,6 +247,27 @@ function create() {
     },
     {
       key: "buggedGuard0"
+    }],
+
+    // Options
+    frameRate: 8,
+    repeat: -1
+  });
+
+  // Wind animation
+  this.anims.create({
+    // Animation key
+    key: "wind",
+
+    // Frames
+    frames: [{
+      key: "wind2"
+    },
+    {
+      key: "wind1"
+    },
+    {
+      key: "wind0"
     }],
 
     // Options
