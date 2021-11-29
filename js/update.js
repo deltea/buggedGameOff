@@ -73,10 +73,12 @@ function update() {
   // Animation
   // Guard animation
   game.guards.getChildren().forEach(sprite => {
-    if (sprite.bugged === false) {
-      sprite.anims.play("guardWalk", true);
-    } else {
-      sprite.anims.play("buggedGuardWalk", true);
+    if (!game.spotted) {
+      if (sprite.bugged === false) {
+        sprite.anims.play("guardWalk", true);
+      } else {
+        sprite.anims.play("buggedGuardWalk", true);
+      }
     }
     if (sprite.x >= sprite.endX) {
       sprite.setVelocityX(-100);

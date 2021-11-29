@@ -1,5 +1,7 @@
 // Create animations, sprites, and colliders
 function create() {
+  const phaser = this;
+
   // Keyboard input
   game.cursors = this.input.keyboard.createCursorKeys();
   game.keyPress = (key) => {
@@ -140,15 +142,20 @@ function create() {
     }
   });
   this.physics.add.overlap(game.spy, game.flashlightBeams, function(spy, beam) {
-    console.log("Game Over");
-    game.spotted = true;
-    game.exclamation.x = beam.guard.x;
-    game.exclamation.y = beam.guard.y - 60;
-    game.exclamation.visible = true;
-    beam.guard.setVelocityX(0);
-    beam.guard.anims.stop();
-    game.spy.setVelocityX(0);
-    game.spy.anims.stop();
+    if (!game.spotted) {
+      console.log("Game Over");
+      game.spotted = true;
+      game.exclamation.x = beam.guard.x;
+      game.exclamation.y = beam.guard.y - 60;
+      game.exclamation.visible = true;
+      beam.guard.setVelocityX(0);
+      beam.guard.anims.stop();
+      game.spy.setVelocityX(0);
+      game.spy.anims.stop();
+      setTimeout(function() {
+        phaser.cameras.main.fadeOut(2000, 0, 0, 0);
+      }, 1000);
+    }
   });
 
   // Instructions
