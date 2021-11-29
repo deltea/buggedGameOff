@@ -1,5 +1,7 @@
 // Create animations, sprites, and colliders
 function create() {
+  const phaser = this;
+
   // Keyboard input
   game.cursors = this.input.keyboard.createCursorKeys();
   game.keyPress = (key) => {
@@ -88,7 +90,17 @@ function create() {
     // Create flashlight beam
     let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y, "flashlightBeam").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setSize(20, 50).setOffset(22, 8);
     guard.beam = flashlightBeam;
+    flashlightBeam.guard = guard;
   }
+
+  // Exclamation point
+  game.exclamation = this.physics.add.staticSprite(0, 0, "exclamation").setScale(3);
+
+  // Folders and files
+  game.files = this.physics.add.sprite(world.files[0], world.files[1], "folder").setScale(3).setSize(75, 55).setOffset(-10, 0).setGravityY(-config.physics.arcade.gravity.y);
+
+  // Wind effect
+  game.wind = this.physics.add.group();
 
   // Colliders
   this.physics.add.collider(game.spy, game.blocks);
@@ -136,10 +148,40 @@ function create() {
     }
   });
   this.physics.add.overlap(game.spy, game.flashlightBeams, function(spy, beam) {
-    console.log("Game Over");
+    if (!game.spotted) {
+      console.log("Game Over");
+      game.spotted = true;
+      game.exclamation.x = beam.guard.x;
+      game.exclamation.y = beam.guard.y - 60;
+      game.exclamation.visible = true;
+      beam.guard.setVelocityX(0);
+      beam.guard.anims.stop();
+      game.spy.setVelocityX(0);
+      game.spy.anims.stop();
+      setTimeout(function() {
+        phaser.cameras.main.fadeOut(2000, 0, 0, 0);
+      }, 1000);
+    }
+  });
+  this.physics.add.overlap(game.spy, game.files, function(spy, files) {
+    if (game.keyPress(Phaser.Input.Keyboard.KeyCodes.C)) {
+      game.win = true;
+      game.spy.setVelocityX(0);
+      game.spy.anims.stop();
+      files.setTexture("files");
+      setTimeout(function() {
+        game.wind.create(0, files.y, "wind0").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setVelocityX(1000);
+        setTimeout(function() {
+          files.setVelocityX(1000);
+        }, 500);
+      }, 1000);
+      setTimeout(function() {
+        phaser.cameras.main.fadeOut(2000, 0, 0, 0);
+      }, 2000);
+    }
   });
 
-  // Instructions
+  // Create instructions
   for (var x = 0; x < world.instructions.length; x++) {
     this.add.text(world.instructions[x][0], world.instructions[x][1], world.instructions[x][2], {
       fontSize: 40,
@@ -205,6 +247,27 @@ function create() {
     },
     {
       key: "buggedGuard0"
+    }],
+
+    // Options
+    frameRate: 8,
+    repeat: -1
+  });
+
+  // Wind animation
+  this.anims.create({
+    // Animation key
+    key: "wind",
+
+    // Frames
+    frames: [{
+      key: "wind2"
+    },
+    {
+      key: "wind1"
+    },
+    {
+      key: "wind0"
     }],
 
     // Options
