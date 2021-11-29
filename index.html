@@ -34,6 +34,13 @@
         spotted: false,
         win: false
       };
+
+      // Add to bug feed
+      function addToBugFeed(who, text) {
+        const textForFeed = document.createElement("P");
+        textForFeed.innerText = `${who}: \"${text}\"`;
+        document.getElementById("bugFeed").appendChild(textForFeed);
+      }
     </script>
 
     <!-- The world data -->
@@ -46,7 +53,7 @@
 
     <!-- Main Script -->
     <script src="js/script.js" charset="utf-8"></script>
-    <div class="bug-feed">
+    <div class="bug-feed" id="bugFeed">
       fsafdsfsdfsfad
     </div>
   </body>

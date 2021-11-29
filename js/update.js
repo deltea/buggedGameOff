@@ -96,24 +96,12 @@ function update() {
     } else {
       sprite.beam.x = sprite.x + 100;
     }
+
+    // Update bug feed
+    if (sprite.bugged) {
+      sprite.addToFeedTimer.paused = false;
+    }
   });
-
-  // Update bug feed
-  if (sprite.bugged) {
-    sprite.addToFeedTimer = this.time.addEvent({
-      // Time
-      delay: 2000,
-
-      // Callback
-      callback: () => {
-        
-      },
-      callbackScope: this,
-
-      // Options
-      repeat: -1
-    });
-  }
 
   // Wind animation
   game.wind.getChildren().forEach(sprite => {

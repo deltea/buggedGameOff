@@ -87,6 +87,22 @@ function create() {
     guard.bugged = false;
     guard.setVelocityX(100);
 
+    // Add to feed
+    guard.addToFeedTimer = this.time.addEvent({
+      // Time
+      delay: 4000,
+
+      // Callback
+      callback: () => {
+        addToBugFeed("Guard 1", "Hello!")
+      },
+      callbackScope: this,
+
+      // Options
+      repeat: -1
+    });
+    guard.addToFeedTimer.paused = true;
+
     // Create flashlight beam
     let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y + 80, "flashlightBeam").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setSize(20, 50).setOffset(22, 8);
     guard.beam = flashlightBeam;
