@@ -94,7 +94,31 @@ const world = {
     [20, 450 + 500],
     [21, 450 + 500],
     [22, 450 + 500],
-    [20, 500 + 500]
+    [20, 500 + 500],
+
+    // A platform
+    [0, -50 + 500],
+    [1, -50 + 500],
+    [2, -50 + 500],
+    [3, -50 + 500],
+    [4, -50 + 500],
+    [5, -50 + 500],
+    [6, -50 + 500],
+    [7, -50 + 500],
+    [10, -50 + 500],
+    [11, -50 + 500],
+    [12, -50 + 500],
+    [13, -50 + 500],
+    [14, -50 + 500],
+    [15, -50 + 500],
+    [16, -50 + 500],
+    [16, -50 + 500],
+    [17, -50 + 500],
+    [18, -50 + 500],
+    [19, -50 + 500],
+    [20, -50 + 500],
+    [21, -50 + 500],
+    [22, -50 + 500],
   ],
   doors: [
     [300, 710 + 500, "DOGGY"],
@@ -115,6 +139,23 @@ const world = {
       "MWAHAHAHAHA!",
       "hehe...",
       "You got tricked!"
+    ]],
+    [50, -200 + 500, 350, "Guard 3", [
+      "Just so you know, the password for door 3 is FAULT",
+      "Yeah, it's really fast, it has 200 horsepower!",
+      "I got a new car yesterday."
+    ]],
+    [700, -200 + 500, 1000, "Guard 4", [
+      "Well, the password for door 3 is PLEAD.",
+      "Then why did you ask me if duct tape would work!!",
+      "Yes, duct tape would work",
+      "Do you have any tape?"
+    ]],
+    [1000, -200 + 500, 1300, "Guard 5", [
+      "The password for door 5 is CABIN.",
+      "I asked because I wanted to know!",
+      "Well, I don't have any tape.",
+      "Would duct tape work?"
     ]],
   ],
   instructions: [
