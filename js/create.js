@@ -204,10 +204,15 @@ function create() {
   });
 
   // Create instructions
-  for (var x = 0; x < world.instructions.length; x++) {
-    addToBugFeed(world.instructions[x]);
-  }
-  scrollToBottom();
+  let count = 0;
+  const interval = setInterval(function() {
+    addToBugFeed(world.instructions[count]);
+    scrollToBottom();
+    count++;
+    if (count >= world.instructions.length) {
+      clearInterval(interval);
+    }
+  }, 5000);
 
   // Animations
   // Spy run
