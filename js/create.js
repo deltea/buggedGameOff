@@ -27,6 +27,7 @@ function create() {
   // Reset variables
   game.spotted = false;
   game.win = false;
+  game.bugDeployed = false;
 
   // Loop background music
   game.sfx.music.setLoop(true);
