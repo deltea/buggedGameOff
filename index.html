@@ -19,6 +19,7 @@
         width: 1000px;
         color: white;
         margin-left: 130px;
+        font-family: "Didact Gothic";
       }
     </style>
   </head>
@@ -34,6 +35,19 @@
         spotted: false,
         win: false
       };
+
+      // Add to bug feed
+      function addToBugFeed(text) {
+        const textForFeed = document.createElement("P");
+        textForFeed.innerText = text;
+        document.getElementById("bugFeed").appendChild(textForFeed);
+      }
+
+      // Scroll bug feed to bottom
+      function scrollToBottom() {
+        const bugFeed = document.getElementById("bugFeed");
+        bugFeed.scrollTop = bugFeed.scrollHeight;
+      }
     </script>
 
     <!-- The world data -->
@@ -46,6 +60,8 @@
 
     <!-- Main Script -->
     <script src="js/script.js" charset="utf-8"></script>
-    <div class="bug-feed"></div>
+
+    <!-- Feed -->
+    <div class="bug-feed" id="bugFeed"></div>
   </body>
 </html>

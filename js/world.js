@@ -79,17 +79,32 @@ const world = {
     [300, 710, "HELLOWORLD"]
   ],
   guards: [
-    [500, 500, 700]
+    [500, 500, 700, "Guard 1", [
+      "Oh, by the way, the password for door 1 is DOGGY.",
+      "Really?! I think Bowser would win.",
+      "Hey, who do you think would win: Bowser or The Hulk?"
+    ]]
   ],
   instructions: [
     // Add move instructions
-    [200, 865, "Use the arrow keys to move"],
+    "Use the arrow keys to move.",
 
     // Add jump instructions
-    [800, 865, "Use the up key to jump"],
+    "Use the up key to jump.",
 
     // Add deploy and take bug instructions
-    [370, 700, "Press the C and X keys to deploy and take a bug"]
+    "Press the C and X keys to deploy and take a bug.",
+
+    // How to get passwords
+    "Deploy the bug onto a guard to eavesdrop on it.",
+    "The guards will tell you the password for a door.",
+
+    // How to enter password
+    "Type while leaning on a door to enter the password.",
+
+    // The objective
+    "You're mission is to retrieve the top secret files.",
+    "Good Luck!"
   ],
   files: [0, 0]
 }
