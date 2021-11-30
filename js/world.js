@@ -115,7 +115,7 @@ const world = {
     "Type while leaning on a door to enter the password.",
 
     // The objective
-    "You're mission is to retrieve the top secret files.",
+    "Your mission is to retrieve the top secret files.",
     "Good Luck!"
   ],
   files: [0, 0]
