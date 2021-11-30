@@ -184,6 +184,7 @@ function create() {
       beam.guard.anims.stop();
       game.spy.setVelocityX(0);
       game.spy.anims.stop();
+      clearBugFeed();
       setTimeout(function() {
         phaser.cameras.main.fadeOut(2000, 0, 0, 0);
         phaser.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (camera, effect) => {

@@ -43,6 +43,12 @@
         document.getElementById("bugFeed").appendChild(textForFeed);
       }
 
+      // Clear text in bug feed
+      function clearBugFeed() {
+        const bugFeed = document.getElementById("bugFeed");
+        bugFeed.innerHTML = "";
+      }
+
       // Scroll bug feed to bottom
       function scrollToBottom() {
         const bugFeed = document.getElementById("bugFeed");
