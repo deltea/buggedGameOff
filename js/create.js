@@ -40,11 +40,11 @@ function create() {
   this.cameras.main.fadeIn(3000, 0, 0, 0);
 
   // Create player sprite
-  game.spy = this.physics.add.sprite(100, 900, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
+  game.spy = this.physics.add.sprite(100, 1400, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
 
   // Camera and bounds
-  this.cameras.main.setBounds(0, 0, 1300, 1000);
-  this.physics.world.setBounds(0, 0, 1300, 1000);
+  this.cameras.main.setBounds(0, 0, 1300, 1500);
+  this.physics.world.setBounds(0, 0, 1300, 1500);
   this.cameras.main.startFollow(game.spy, true, 0.1, 0.1);
 
   // Blocks
