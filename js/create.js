@@ -24,6 +24,10 @@ function create() {
   game.sfx.passwordEnter = this.sound.add("passwordEnter");
   game.sfx.removeBug = this.sound.add("removeBug");
 
+  // Reset variables
+  game.spotted = false;
+  game.win = false;
+
   // Loop background music
   game.sfx.music.setLoop(true);
 
@@ -182,6 +186,11 @@ function create() {
       game.spy.anims.stop();
       setTimeout(function() {
         phaser.cameras.main.fadeOut(2000, 0, 0, 0);
+        phaser.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (camera, effect) => {
+          setTimeout(function() {
+            phaser.scene.restart();
+          }, 1000);
+      	});
       }, 1000);
     }
   });
