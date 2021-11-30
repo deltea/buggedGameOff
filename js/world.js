@@ -82,7 +82,19 @@ const world = {
     [3, 466 + 500],
 
     // An one-block platform
-    [5, 300 + 500]
+    [5, 300 + 500],
+
+    // Another one-block platform
+    [7, 200 + 500],
+
+    // Yet another one-block platform
+    [9, 100 + 500],
+
+    // Mini box
+    [20, 450 + 500],
+    [21, 450 + 500],
+    [22, 450 + 500],
+    [20, 500 + 500]
   ],
   doors: [
     [300, 710 + 500, "DOGGY"],
@@ -98,6 +110,11 @@ const world = {
       "Anyway, the password for door 2 is CLEAN.",
       "You like it?!",
       "Have you heard that the Staples Center got renamed to the Crypto.com Arena? Do you like the name?"
+    ]],
+    [1220, 500 + 500, 1270, "Trap Guard", [
+      "MWAHAHAHAHA!",
+      "hehe...",
+      "You got tricked!"
     ]],
   ],
   instructions: [
