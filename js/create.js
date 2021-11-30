@@ -33,10 +33,11 @@ function create() {
   game.sfx.music.setLoop(true);
 
   // Play music
-  game.sfx.music.stop();
-  game.sfx.music.play({
-    volume: 0.3
-  });
+  if (!game.sfx.music.isPlaying) {  
+    game.sfx.music.play({
+      volume: 0.3
+    });
+  }
 
   // Fade in to the scene
   this.cameras.main.fadeIn(3000, 0, 0, 0);
