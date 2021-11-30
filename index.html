@@ -19,6 +19,7 @@
         width: 1000px;
         color: white;
         margin-left: 130px;
+        font-family: "Didact Gothic";
       }
     </style>
   </head>
@@ -41,7 +42,7 @@
         textForFeed.innerText = `${who}: \"${text}\"`;
         document.getElementById("bugFeed").appendChild(textForFeed);
       }
-      
+
       // Scroll bug feed to bottom
       function scrollToBottom() {
         const bugFeed = document.getElementById("bugFeed");
