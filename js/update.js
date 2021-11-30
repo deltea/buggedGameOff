@@ -100,6 +100,8 @@ function update() {
     // Update bug feed
     if (sprite.bugged) {
       sprite.addToFeedTimer.paused = false;
+    } else {
+      sprite.addToFeedTimer.paused = true;
     }
   });
 
