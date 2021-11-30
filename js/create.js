@@ -187,7 +187,9 @@ function create() {
       setTimeout(function() {
         phaser.cameras.main.fadeOut(2000, 0, 0, 0);
         phaser.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (camera, effect) => {
-      		phaser.scene.restart();
+          setTimeout(function() {
+            phaser.scene.restart();
+          }, 1000);
       	});
       }, 1000);
     }
