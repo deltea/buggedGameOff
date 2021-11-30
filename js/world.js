@@ -86,9 +86,9 @@ const world = {
     [12, 330],
   ],
   doors: [
-    [550, 410, "DOGGY"],
+    [550, 410, "HELLOWORLD"],
     [376, 556, "HELLOWORLD"],
-    [300, 710, "HELLOWORLD"]
+    [300, 710, "DOGGY"]
   ],
   guards: [
     [700, 720, 1000, "Guard 1", [
