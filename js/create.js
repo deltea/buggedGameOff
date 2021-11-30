@@ -96,7 +96,7 @@ function create() {
 
       // Callback
       callback: () => {
-        addToBugFeed(guard.name, guard.scripts[guard.addToFeedTimer.repeatCount]);
+        addToBugFeed(`${guard.name}: ${guard.scripts[guard.addToFeedTimer.repeatCount]}`);
         scrollToBottom();
       },
       callbackScope: this,
@@ -202,12 +202,9 @@ function create() {
 
   // Create instructions
   for (var x = 0; x < world.instructions.length; x++) {
-    this.add.text(world.instructions[x][0], world.instructions[x][1], world.instructions[x][2], {
-      fontSize: 40,
-      fontFamily: "Didact Gothic",
-      color: "#000000"
-    });
+    addToBugFeed(world.instructions[x]);
   }
+  scrollToBottom();
 
   // Animations
   // Spy run

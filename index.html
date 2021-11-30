@@ -37,9 +37,9 @@
       };
 
       // Add to bug feed
-      function addToBugFeed(who, text) {
+      function addToBugFeed(text) {
         const textForFeed = document.createElement("P");
-        textForFeed.innerText = `${who}: \"${text}\"`;
+        textForFeed.innerText = text;
         document.getElementById("bugFeed").appendChild(textForFeed);
       }
 
