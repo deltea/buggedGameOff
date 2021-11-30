@@ -212,7 +212,7 @@ function create() {
     if (count >= world.instructions.length) {
       clearInterval(interval);
     }
-  }, 5000);
+  }, 3000);
 
   // Animations
   // Spy run
