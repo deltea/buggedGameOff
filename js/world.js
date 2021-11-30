@@ -74,16 +74,28 @@ const world = {
     [20, 640],
     [21, 640],
     [22, 640],
+
+    // A mini platform
+    [0, 466],
+    [1, 466],
+    [2, 466],
+    [3, 466],
   ],
   doors: [
     [300, 710, "DOGGY"],
+    [140, 550, "CLEAN"]
   ],
   guards: [
     [700, 720, 1000, "Guard 1", [
       "Oh, by the way, the password for door 1 is DOGGY.",
       "Really?! I think Bowser would win.",
       "Hey, who do you think would win: Bowser or The Hulk?"
-    ]]
+    ]],
+    [400, 500, 700, "Guard 2", [
+      "Anyway, the password for door 2 is CLEAN.",
+      "You like it?!",
+      "Have you heard that the Staples Center got renamed to the Crypto.com Arena? Do you like the name?"
+    ]],
   ],
   instructions: [
     // Add move instructions
