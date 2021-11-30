@@ -33,9 +33,6 @@ function create() {
   game.sfx.music.setLoop(true);
 
   // Play music
-  if (game.sfx.music.isPlaying) {  
-    game.sfx.music.stop();
-  }
   game.sfx.music.play({
     volume: 0.3
   });
@@ -189,6 +186,7 @@ function create() {
       beam.guard.anims.stop();
       game.spy.setVelocityX(0);
       game.spy.anims.stop();
+      game.sfx.music.stop();
       clearBugFeed();
       setTimeout(function() {
         phaser.cameras.main.fadeOut(2000, 0, 0, 0);
