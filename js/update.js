@@ -74,7 +74,7 @@ function update() {
   // Guard animation
   game.guards.getChildren().forEach(sprite => {
     if (!game.spotted) {
-      if (sprite.bugged === false) {
+      if (!sprite.bugged) {
         sprite.anims.play("guardWalk", true);
       } else {
         sprite.anims.play("buggedGuardWalk", true);
@@ -97,6 +97,13 @@ function update() {
     } else {
       sprite.beam.x = sprite.x + 100;
       sprite.beam.y = sprite.y + 15;
+    }
+
+    // Update bug feed
+    if (sprite.bugged) {
+      sprite.addToFeedTimer.paused = false;
+    } else {
+      sprite.addToFeedTimer.paused = true;
     }
   });
 

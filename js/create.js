@@ -32,6 +32,9 @@ function create() {
     volume: 0.3
   });
 
+  // Fade in to the scene
+  this.cameras.main.fadeIn(3000, 0, 0, 0);
+
   // Create player sprite
   game.spy = this.physics.add.sprite(100, 900, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
 
@@ -84,8 +87,27 @@ function create() {
     let guard = game.guards.create(world.guards[x][0], world.guards[x][1], "guard0").setScale(3).setSize(18, 33).setOffset(22, 15);
     guard.startX = world.guards[x][0];
     guard.endX = world.guards[x][2];
+    guard.name = world.guards[x][3];
+    guard.scripts = world.guards[x][4];
     guard.bugged = false;
     guard.setVelocityX(100);
+
+    // Add to feed
+    guard.addToFeedTimer = this.time.addEvent({
+      // Time
+      delay: 4000,
+
+      // Callback
+      callback: () => {
+        addToBugFeed(`${guard.name}: ${guard.scripts[guard.addToFeedTimer.repeatCount]}`);
+        scrollToBottom();
+      },
+      callbackScope: this,
+
+      // Options
+      repeat: guard.scripts.length - 1
+    });
+    guard.addToFeedTimer.paused = true;
 
     // Create flashlight beam
     let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y, "flashlightBeam").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setSize(20, 50).setOffset(22, 8);
@@ -182,13 +204,15 @@ function create() {
   });
 
   // Create instructions
-  for (var x = 0; x < world.instructions.length; x++) {
-    this.add.text(world.instructions[x][0], world.instructions[x][1], world.instructions[x][2], {
-      fontSize: 40,
-      fontFamily: "Didact Gothic",
-      color: "#000000"
-    });
-  }
+  let count = 0;
+  const interval = setInterval(function() {
+    addToBugFeed(world.instructions[count]);
+    scrollToBottom();
+    count++;
+    if (count >= world.instructions.length) {
+      clearInterval(interval);
+    }
+  }, 3000);
 
   // Animations
   // Spy run
