@@ -32,6 +32,9 @@ function create() {
     volume: 0.3
   });
 
+  // Fade in to the scene
+  this.cameras.main.fadeIn(3000, 0, 0, 0);
+
   // Create player sprite
   game.spy = this.physics.add.sprite(100, 900, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
 
