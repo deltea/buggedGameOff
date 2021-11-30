@@ -33,6 +33,7 @@ function create() {
   game.sfx.music.setLoop(true);
 
   // Play music
+  game.sfx.music.stop();
   game.sfx.music.play({
     volume: 0.3
   });
