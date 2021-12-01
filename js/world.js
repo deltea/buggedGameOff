@@ -119,10 +119,36 @@ const world = {
     [20, -50 + 500],
     [21, -50 + 500],
     [22, -50 + 500],
+
+    // A platforms
+    [14, -258 + 500],
+    [15, -258 + 500],
+    [16, -258 + 500],
+    [17, -258 + 500],
+    [18, -258 + 500],
+    [19, -258 + 500],
+    [20, -258 + 500],
+    [21, -258 + 500],
+
+    // A block
+    [13, -316 + 500],
+    [13, -374 + 500],
+
+    // A platforms
+    [14, -432 + 500],
+    [15, -432 + 500],
+    [16, -432 + 500],
+    [17, -432 + 500],
+    [18, -432 + 500],
+    [19, -432 + 500],
+    [20, -432 + 500],
+    [21, -432 + 500],
   ],
   doors: [
     [300, 710 + 500, "DOGGY"],
     [140, 550 + 500, "CLEAN"],
+    [900, -348 + 500, "CABIN"],
+    [920, -348 + 500, "FAULT"],
   ],
   guards: [
     [700, 720 + 500, 1000, "Guard 1", [
@@ -151,12 +177,6 @@ const world = {
       "Yes, duct tape would work",
       "Do you have any tape?"
     ]],
-    [1000, -200 + 500, 1300, "Guard 5", [
-      "The password for door 5 is CABIN.",
-      "I asked because I wanted to know!",
-      "Well, I don't have any tape.",
-      "Would duct tape work?"
-    ]],
   ],
   instructions: [
     // Add move instructions
@@ -179,5 +199,5 @@ const world = {
     "Your mission is to retrieve the top-secret files.",
     "Good Luck!"
   ],
-  files: [0, 0]
+  files: [850, -345 + 500]
 }
