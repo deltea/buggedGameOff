@@ -172,7 +172,7 @@ const world = {
       "I got a new car yesterday."
     ]],
     [700, -200 + 500, 1000, "Guard 4", [
-      "Well, the password for door 3 is PLEAD.",
+      "Well, the password for door 3 is CABIN.",
       "Then why did you ask me if duct tape would work!!",
       "Yes, duct tape would work",
       "Do you have any tape?"
