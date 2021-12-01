@@ -37,15 +37,16 @@ function create() {
     volume: 0.3
   });
 
+
   // Fade in to the scene
   this.cameras.main.fadeIn(3000, 0, 0, 0);
 
   // Create player sprite
-  game.spy = this.physics.add.sprite(100, 900, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
+  game.spy = this.physics.add.sprite(100, 1400, "spy0").setScale(3).setSize(17, 24).setOffset(25, 20);
 
   // Camera and bounds
-  this.cameras.main.setBounds(0, 0, 1300, 1000);
-  this.physics.world.setBounds(0, 0, 1300, 1000);
+  this.cameras.main.setBounds(0, 0, 1300, 1500);
+  this.physics.world.setBounds(0, 0, 1300, 1500);
   this.cameras.main.startFollow(game.spy, true, 0.1, 0.1);
 
   // Blocks
@@ -115,7 +116,7 @@ function create() {
     guard.addToFeedTimer.paused = true;
 
     // Create flashlight beam
-    let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y + 80, "flashlightBeam").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setSize(20, 50).setOffset(22, 8);
+    let flashlightBeam = game.flashlightBeams.create(guard.x, guard.y, "flashlightBeam").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setSize(20, 50).setOffset(22, 8);
     guard.beam = flashlightBeam;
     flashlightBeam.guard = guard;
   }
@@ -124,7 +125,7 @@ function create() {
   game.exclamation = this.physics.add.staticSprite(0, 0, "exclamation").setScale(3);
 
   // Folders and files
-  game.files = this.physics.add.sprite(world.files[0], world.files[1], "folder").setScale(3).setSize(75, 55).setOffset(-10, 0).setGravityY(-config.physics.arcade.gravity.y);
+  game.files = this.physics.add.sprite(world.files[0], world.files[1], "folder").setScale(3).setSize(30, 30).setOffset(15, 15).setGravityY(-config.physics.arcade.gravity.y);
 
   // Wind effect
   game.wind = this.physics.add.group();
@@ -185,6 +186,7 @@ function create() {
       beam.guard.anims.stop();
       game.spy.setVelocityX(0);
       game.spy.anims.stop();
+      game.sfx.music.stop();
       clearBugFeed();
       setTimeout(function() {
         phaser.cameras.main.fadeOut(2000, 0, 0, 0);
@@ -206,7 +208,7 @@ function create() {
         game.wind.create(0, files.y, "wind0").setScale(3).setGravityY(-config.physics.arcade.gravity.y).setVelocityX(1000);
         setTimeout(function() {
           files.setVelocityX(1000);
-        }, 500);
+        }, 800);
       }, 1000);
       setTimeout(function() {
         phaser.cameras.main.fadeOut(2000, 0, 0, 0);
