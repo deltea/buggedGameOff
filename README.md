@@ -40,7 +40,7 @@ After you activate the server, got to [localhost:8000](http://localhost:8000/) t
 
 ## Preview
 
-No preview right now, sorry :disappointed:
+<img width="392" alt="bugged" src="https://user-images.githubusercontent.com/67921602/144677429-f216128e-5746-4d7d-90cb-b57f780fc485.png">
 
 ## Contribution
 
