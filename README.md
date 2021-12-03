@@ -48,7 +48,9 @@ Read [CONTRIBUTING.md](https://github.com/thcheetah777/buggedGameOff/blob/master
 
 ## Version History
 
-None right now, but there will be soon!
+| Version | Description |
+| :------------- | :------------- |
+| [v1.0](https://github.com/thcheetah777/buggedGameOff/releases/tag/v1.0) | The final version for the Github Game Off. |
 
 ## License
 
